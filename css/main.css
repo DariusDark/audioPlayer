@@ -1,0 +1,232 @@
+:root {
+    --bgColor: #1e1f26;
+}
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    user-select: none;
+    outline: none;
+}
+
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:focus,
+:active {
+    outline: none;
+}
+a:focus,
+a:active {
+    outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+    display: block;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    min-height: 100%;
+    min-width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+    font-family: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+}
+button {
+    cursor: pointer;
+    background: none;
+}
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+a {
+    text-decoration: none;
+    color: #111;
+} /*<<<Color*/
+a:hover {
+    text-decoration: none;
+}
+ul li {
+    list-style: none;
+}
+img {
+    vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: 400;
+}
+/*Конец обнуления*/
+
+body {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: #fff;
+}
+
+.wrapper {
+    min-height: 100vh;
+    background: var(--bgColor);
+    display: flex;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 0px 20px;
+    margin: auto;
+}
+.audio-player__column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.audio-player__title {
+    margin-bottom: 40px;
+}
+.audio-player__timer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.audio-player__track {
+    display: flex;
+    min-width: 500px;
+    margin-bottom: 15px;
+}
+.audio-player__track-container {
+    display: flex;
+    align-items: center;
+}
+.audio-player__track-container:first-child {
+    flex: 1 1 auto;
+    margin-right: 10px;
+}
+.audio-player__track-container:last-child {
+    position: relative;
+    flex: 0 1 10%;
+    padding-right: 30px;
+}
+.audio-player__volume-icon {
+    position: absolute;
+    right: 0;
+}
+.audio-player__volume-img {
+    height: 25px;
+    cursor: pointer;
+}
+.audio-player__volume-icon:before {
+    position: absolute;
+    border-radius: 2px;
+    content: '';
+    right: 0;
+    bottom: 40%;
+    height: 2px;
+    width: 25px;
+    transform: rotate(45deg) translate(0, -50%);
+    background: #b8b8b8;
+    box-shadow: 0 -2px 0 var(--bgColor);
+    opacity: 0;
+    visibility: hidden;
+}
+.audio-player__volume-icon.active:before {
+    opacity: 1;
+    visibility: visible;
+}
+.audio-player__track-volume {
+    cursor: pointer;
+    appearance: none;
+    background-color: #3e3e44;
+    background-image: linear-gradient(180deg, #c9adff, #a9a1d6);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.audio-player__track-volume::-webkit-slider-runnable-track {
+    appearance: none;
+}
+.audio-player__track-volume::-webkit-slider-thumb {
+    height: 15px;
+    appearance: none;
+    width: 15px;
+    border-radius: 12px;
+    background: #c8adff;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.audio-player__track-road {
+    cursor: pointer;
+    width: 100%;
+    background-color: #3e3e44;
+    background-image: linear-gradient(180deg, #c9adff, #a9a1d6);
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    -webkit-appearance: none;
+}
+.audio-player__track-road::-webkit-slider-runnable-track {
+    appearance: none;
+}
+.audio-player__track-road::-webkit-slider-thumb {
+    width: 15px;
+    height: 15px;
+    -webkit-appearance: none;
+    border-radius: 12px;
+    background: #c8adff;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+.audio-player__toggle-play {
+    border-radius: 50%;
+    padding: 4px;
+    border-top:2px solid #FDECFF;
+    border-left:2px solid #FDECFF;
+    background: linear-gradient(145deg, #E6AAFE, #D1ACFE);
+}
+.audio-player__toggle-play img {
+    display: none;
+    height: 35px;
+}
+
+.audio-player__toggle-play.play img:first-child, 
+.audio-player__toggle-play.pause img:last-child {
+    display: block;
+}
+
+input[type="range"] {
+    border-radius: 10px;
+    height: 7px;
+}
+
+input[type="range"]:hover::-webkit-slider-thumb {
+    opacity: 1;
+}
